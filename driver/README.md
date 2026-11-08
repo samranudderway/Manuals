@@ -1,0 +1,3 @@
+# The Udder Driver
+
+Manual not written yet. Add `index.html` and `assets/` here, same pattern as `dairy/`.
