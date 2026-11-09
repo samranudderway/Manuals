@@ -1,13 +1,13 @@
 # Manuals
 
-User manuals for the three TUW apps.
+User manual for The Udder Way. One site, all three apps and the dashboard.
 
-| App | Path | Status |
-|-----|------|--------|
-| The Udder Dairy | `dairy/index.html` | Live source |
-| The Udder Driver | `driver/` | Not written yet |
-| The Udder Venue | `venue/` | Not written yet |
+| Page | Path | Status |
+|------|------|--------|
+| Manual | `index.html` | Live source |
+| Onboarding PDF | `assets/TUW-onboarding.pdf` | Included |
+| Old dairy page | `dairy/index.html` | Redirects to `/` |
 
-Each app is a static HTML page plus an `assets/` folder. Open `index.html` in a browser. Images must be relative (`assets/...`), never absolute local paths.
+Published at https://manual.theudderdairy.com/
 
-Published copy of the dairy manual: https://manual.theudderdairy.com/
+GitHub edits do not update the live site by themselves.
