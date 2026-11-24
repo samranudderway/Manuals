@@ -102,6 +102,10 @@
   .hidden { display: none !important; }
   .empty { display: none; text-align: center; color: var(--muted); padding: 28px; }
   footer { color: var(--muted); font-size: 13px; text-align: center; margin-top: 8px; }
+  .section-divider {
+    text-align: center; padding: 10px 0 6px; color: var(--muted);
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700;
+  }
   @media (max-width: 800px) {
     .hero, .block { padding: 24px 18px; }
     h1 { font-size: 34px; }
@@ -125,52 +129,114 @@
 </header>
 
 <main class="wrap">
-  <section class="hero" data-search="onboarding intro system three apps dashboard saas kegs">
+
+  <!-- ===================== PLATFORM OVERVIEW ===================== -->
+  <section class="hero module" id="overview" data-search="overview platform intro saas system apps dairy driver venue dashboard kegs onboarding">
     <p class="kicker">The Udder Way</p>
-    <h1>One simple system<br>for your kegs.</h1>
-    <p>Three mobile apps and one dashboard. Run the operation. Manage the stock. Every fill leaves a fingerprint on the keg — who filled it, what went in, and when.</p>
-    <p>Orders, runs, scans, and a live map. No spreadsheets. No “where did that keg go?”</p>
+    <h1>One system.<br>Four apps.<br>Every keg.</h1>
+    <p>The Udder Way is a keg management platform built for dairy operations. It connects the dairy, drivers, and venues in a single live system — so you always know where every keg is, what went into it, and when it was last touched.</p>
+    <p>No spreadsheets. No calls to track a keg. Every scan leaves a permanent record. Every fill is fingerprinted. Every delivery is confirmed the moment it happens.</p>
+    <div class="grid2" style="margin-top:16px;margin-bottom:16px">
+      <div class="card"><h3>What stays the same</h3><p>Every keg has a QR code. That code is its identity. Scan it to fill, clean, deliver, collect, or look it up. The history never disappears.</p></div>
+      <div class="card"><h3>How it connects</h3><p>A scan on the driver's phone updates the dairy app and dashboard in seconds. All four parts run on the same live data.</p></div>
+    </div>
     <div class="apps">
-      <a class="app" href="https://apps.apple.com/au/app/the-udder-dairy/id6781441640">
+      <a class="app" href="#dairy">
         <img src="assets/guide/icon-dairy.jpg" alt="The Udder Dairy" />
-        <b>The Udder Dairy</b><span>For the plant</span>
+        <b>The Udder Dairy</b><span>For the dairy</span>
       </a>
-      <a class="app" href="https://apps.apple.com/au/app/the-udder-driver/id6781442329">
+      <a class="app" href="#driver">
         <img src="assets/guide/icon-driver-app.jpg" alt="The Udder Driver" />
         <b>The Udder Driver</b><span>For the road</span>
       </a>
-      <a class="app" href="https://apps.apple.com/au/app/the-udder-venue/id6781442289">
+      <a class="app" href="#venue">
         <img src="assets/guide/icon-venue-app.jpg" alt="The Udder Venue" />
-        <b>The Udder Venue</b><span>For the café</span>
+        <b>The Udder Venue</b><span>For the venue</span>
+      </a>
+      <a class="app" href="#dashboard">
+        <img src="assets/guide/icon-dashboard.jpg" alt="Dashboard" onerror="this.style.display='none'" />
+        <b>Dashboard</b><span>For the desk</span>
       </a>
     </div>
     <div class="jump">
-      <a href="#onboarding">Onboarding</a>
-      <a href="#dairy">Dairy</a>
-      <a href="#driver">Driver</a>
-      <a href="#venue">Venue</a>
+      <a href="#lifecycle">Keg Lifecycle</a>
+      <a href="#dairy">Dairy App</a>
+      <a href="#driver">Driver App</a>
+      <a href="#venue">Venue App</a>
       <a href="#dashboard">Dashboard</a>
+      <a href="#getstarted">Getting Started</a>
       <a href="assets/TUW-onboarding.pdf">Onboarding PDF</a>
-      <a href="https://theudderdairy.com">theudderdairy.com</a>
     </div>
   </section>
 
   <p id="empty" class="empty">No module matches that search.</p>
 
-  <section class="block module" id="onboarding" data-search="onboarding keg cycle clean fill deliver venue empty collected circle what you get">
+  <!-- ===================== KEG LIFECYCLE ===================== -->
+  <section class="block module" id="lifecycle" data-search="keg lifecycle clean fill stock order run deliver venue empty collect quarantine status cycle">
     <p class="kicker">Start here</p>
     <h2>A keg goes out full. It comes home empty. Then it goes again.</h2>
+    <p class="muted">Every step is a scan. Every scan is a record. The cycle repeats for the life of the keg.</p>
     <img class="cycle" src="assets/guide/keg-cycle.png" alt="Keg cycle" />
-    <div class="grid2" style="margin-top:16px">
-      <div class="card"><h3>The keg</h3><p>18 litres. Food-grade. Washed and filled at the dairy. One keg replaces a crate of bottles.</p></div>
-      <div class="card"><h3>Who uses what</h3><p><b>Dairy</b> fills and cleans. <b>Driver</b> delivers and collects. <b>Venue</b> orders and pours. <b>Dashboard</b> is the same picture, on a computer.</p></div>
-    </div>
+
+    <h3>Step 1 — Wash</h3>
+    <div class="step"><b>At the dairy, after every return</b><small>Wash the keg physically first. Then open the Dairy app and scan the QR as <strong>Clean</strong>. That scan is what moves the keg out of the cleaning queue and into the fill queue. Skip the scan and the keg will not appear for filling.</small></div>
+    <div class="note warn">Only scan Clean after the keg has been washed. The app trusts the scan. A dirty keg in the fill queue gets filled and goes to a venue.</div>
+    <p style="margin-top:10px"><strong>Status: Needs Cleaning → Ready to Fill</strong></p>
+
+    <h3>Step 2 — Fill</h3>
+    <div class="step"><b>At the dairy, after every wash cycle</b><small>Open Fill. Select the product — Full Cream (blue lid) or Lite (pink lid). Scan the keg QR. The app sets the use-by from your product settings. Take the operator photo. Confirm. The keg moves into the cool room and can go on a run.</small></div>
+    <div class="note warn">Wrong product type miscounts the cool room and can send the wrong milk to a venue. Admin correction required to fix it.</div>
+    <p style="margin-top:10px"><strong>Status: Ready to Fill → Filled</strong></p>
+
+    <h3>Step 3 — Stock Check</h3>
+    <div class="step"><b>At the dairy, before every run</b><small>Open Stock. Compare Cool Room quantities against Orders. If you are short on a product, fill more kegs before the driver leaves. A keg is not in stock until it has been filled and scanned — the count is real, not an estimate.</small></div>
+    <p style="margin-top:10px"><strong>Status: Filled (in cool room)</strong></p>
+
+    <h3>Step 4 — Order</h3>
+    <div class="step"><b>From the venue, via Ordermentum</b><small>Venues order through Ordermentum. Orders flow into the Dairy app automatically — no manual entry. Orders are grouped by delivery date. Tuesday orders close Monday evening. Friday orders close Thursday evening.</small></div>
+
+    <h3>Step 5 — Build the Run</h3>
+    <div class="step"><b>At the dairy, on delivery days</b><small>Create a run, add stops in route order, assign the driver. Start the run when the truck leaves. Starting the run activates the driver's view — they can see their stops, kegs to drop, and empties to collect.</small></div>
+    <p style="margin-top:10px"><strong>Status: Filled → Picked Up (on the truck)</strong></p>
+
+    <h3>Step 6 — Delivery</h3>
+    <div class="step"><b>By the driver, on the road</b><small>The driver opens each stop. They see how many kegs to drop and how many empties to collect. They scan each keg they leave and each empty they take. Each scan updates the dairy app immediately — no call needed to confirm a stop is done.</small></div>
+    <p style="margin-top:10px"><strong>Status: Picked Up → At Venue</strong></p>
+
+    <h3>Step 7 — At the Venue</h3>
+    <div class="step"><b>The keg is on tap</b><small>The venue sees the keg in their app — product type, use-by date, and how long it has been there. The venue places their next order through the app when ready. Watch the use-by: a keg at zero days must be pulled and not served.</small></div>
+    <p style="margin-top:10px"><strong>Status: At Venue → Empty (when finished)</strong></p>
+
+    <h3>Step 8 — Collection</h3>
+    <div class="step"><b>By the driver, on the return leg</b><small>The driver collects empties on the same run as deliveries or on a separate return. They scan each empty they pick up. The keg moves back toward the dairy.</small></div>
+    <p style="margin-top:10px"><strong>Status: Empty → Needs Cleaning</strong></p>
+
+    <h3>Step 9 — Quarantine (when required)</h3>
+    <div class="step"><b>Any staff member, any time</b><small>Use Quarantine for: expired use-by, physical damage, contamination concern, or a fill that should not have happened. The keg leaves circulation immediately. Only an admin can release it. When released, it returns to Needs Cleaning — wash before filling again.</small></div>
+    <p style="margin-top:10px"><strong>Status: Quarantined → (admin release) → Needs Cleaning</strong></p>
+
+    <h3 style="margin-top:24px">Keg Status Reference</h3>
+    <table>
+      <tr><th>Status</th><th>What it means</th><th>Next step</th></tr>
+      <tr><td>Ready to Fill</td><td>Clean, in the fill queue</td><td>Fill it</td></tr>
+      <tr><td>Filled</td><td>In the cool room</td><td>Put it on a run</td></tr>
+      <tr><td>Picked Up</td><td>On the truck</td><td>Driver delivers it</td></tr>
+      <tr><td>At Venue</td><td>On tap at the venue</td><td>Watch the use-by. Collect when empty.</td></tr>
+      <tr><td>Empty</td><td>Finished, still at the venue</td><td>Collect on the next run</td></tr>
+      <tr><td>Needs Cleaning</td><td>Home, not washed</td><td>Wash it, then scan Clean</td></tr>
+      <tr><td>Quarantined</td><td>Out of circulation</td><td>Admin releases it back to cleaning</td></tr>
+    </table>
   </section>
 
-  <section class="block module" id="dairy" data-search="dairy home customers overview fill orders drivers clean settings chat fleet map stock replace quick scan plant">
+  <!-- ===================== THE UDDER DAIRY ===================== -->
+  <div class="section-divider">— The Udder Dairy —</div>
+  <section class="block module" id="dairy" data-search="dairy home customers overview fill orders drivers clean settings chat fleet map stock replace quick scan admin factory staff">
     <p class="kicker">The Udder Dairy</p>
-    <h2>Everything the plant needs, one tap away.</h2>
-    <div class="shots">
+    <h2>Everything the dairy needs, one tap away.</h2>
+    <p>The Dairy app is the control centre for the whole operation. Dairy staff use it to wash and fill kegs, check stock, and prepare runs. Admins manage orders, build runs, oversee drivers, and handle customer accounts. Super admins have full access including staff management and settings.</p>
+    <p class="muted">This is the only app where kegs are created, filled, and dispatched. Everything else in the platform responds to what happens here.</p>
+
+    <div class="shots" style="margin:18px 0">
       <img class="phone" src="dairy/assets/home-diagram.png" alt="Dairy home with every icon labelled" />
       <div class="icons" style="flex:1">
         <div><strong>Customers</strong><span>Venues you supply. Who has kegs right now.</span></div>
@@ -184,241 +250,225 @@
         <div><strong>Fleet Map</strong><span>Drivers and venues, live.</span></div>
         <div><strong>Stock</strong><span>Kegs in the cool room, ready to go.</span></div>
         <div><strong>Replace</strong><span>Swap a damaged label. The keg keeps its history.</span></div>
-        <div><strong>Quick Scan</strong><span>Hold the round button. Lookup only. It does not fill, clean, or deliver.</span></div>
+        <div><strong>Quick Scan</strong><span>Hold the round button. Lookup only.</span></div>
       </div>
     </div>
-  </section>
 
-  <section class="block module" id="clean" data-search="dairy clean wash record qr ready to fill dirty queue">
-    <p class="kicker">Dairy · after every wash</p>
-    <h2>Clean</h2>
-    <p>Wash the keg first. Then scan it. That is what moves it from needs-cleaning to ready to fill. If you do not scan it, it will not appear in the fill queue.</p>
-    <ol class="steps">
-      <li><div>From Home, tap <b>Clean</b>.</div></li>
-      <li><div>The camera opens. Point it at the QR on the keg. It reads by itself.</div></li>
-      <li><div>Check the keg ID. Tap <b>Confirm Clean</b>.</div></li>
-      <li><div>The scanner stays open. Scan the next keg.</div></li>
-    </ol>
-    <div class="note warn">Only scan a keg as clean after it has been washed. A dirty keg in the fill queue can get filled and sent out.</div>
-  </section>
+    <h3>Clean — after every wash</h3>
+    <div class="grid2">
+      <div>
+        <p>Scan a keg as Clean after washing it. The camera opens automatically — point it at the QR and it reads itself. Confirm, and the scanner stays open for the next keg. This is the gating step: a keg not scanned Clean will not appear in the fill queue.</p>
+        <div class="note warn">Do not scan before the keg is physically washed. The app cannot detect keg condition — it trusts the scan.</div>
+      </div>
+      <img class="phone" src="assets/guide/dairy-home.jpg" alt="Clean screen" />
+    </div>
 
-  <section class="block module" id="fill" data-search="dairy fill fingerprint qr product full cream lite milk blue lid pink lid use-by selfie operator cool room">
-    <p class="kicker">Dairy · after every fill</p>
-    <h2>Fill</h2>
-    <p>Every fill leaves a fingerprint on the keg: who filled it, what went in, and when. That record is what you use later if a venue asks about a keg.</p>
-    <ol class="steps">
-      <li><div>Tap <b>Fill</b>. Pick the product first. Blue lid is full cream. Pink lid is lite milk.</div></li>
-      <li><div>Scan the QR.</div></li>
-      <li><div>The app sets the use-by from the product. Take the operator photo.</div></li>
-      <li><div>Confirm. The keg moves into the cool room and can go on a run.</div></li>
-    </ol>
-    <div class="note warn">Wrong product type miscounts the cool room. The driver can then take the wrong milk. Fixing it needs an admin correction.</div>
-  </section>
+    <h3>Fill — after every wash cycle</h3>
+    <p>Tap Fill. Select the product first (Full Cream — blue lid; Lite — pink lid). Scan the QR. The app sets the use-by automatically from your product settings. Take the operator photo. Confirm. The keg moves into the cool room.</p>
+    <p>The fill record is permanent: product, use-by, operator, timestamp. This is the record you check if a venue ever queries a keg.</p>
 
-  <section class="block module" id="stock" data-search="dairy stock cool room clean ordered batch use-by days remaining morning">
-    <p class="kicker">Dairy · every morning</p>
-    <h2>Stock</h2>
-    <div class="shots"><img class="phone" src="dairy/assets/fec079ea-1999-4cfd-a39a-478132d3284c.jpg" alt="Stock screen" /></div>
-    <p>Stock is what is physically at the dairy. Cool room is filled and ready. Clean is washed and waiting. Ordered is what venues have asked for on the next run.</p>
-    <p>Each cool-room batch shows product, use-by, days left, and the keg IDs. If a keg is on 0 days, pull it. Do not deliver it.</p>
-    <div class="note">A keg is not in stock until it has been filled and scanned. The count is not an estimate.</div>
-  </section>
+    <h3>Stock — daily</h3>
+    <p>Three buckets: <strong>Cool Room</strong> (filled, ready to go), <strong>Clean</strong> (washed, waiting to fill), <strong>Ordered</strong> (what venues have requested). Each cool room batch shows product, use-by, days remaining, and keg IDs. Pull any keg at zero days — do not deliver it.</p>
 
-  <section class="block module" id="overview" data-search="dairy overview activity fills cleans delivered alerts runs going out fleet status">
-    <p class="kicker">Dairy · daily</p>
-    <h2>Overview</h2>
-    <div class="shots"><img class="phone" src="dairy/assets/687c79de-dd39-4d5a-b2a4-85d6adc7a7b0.jpg" alt="Overview screen" /></div>
-    <p>The morning picture: kegs at venues, empties waiting, kegs that need a wash, kegs ready to fill, and what is going out today.</p>
-    <p>The activity tab is the log. Fills, cleans, and deliveries, with the person who did them. Use it when someone asks what happened yesterday.</p>
-  </section>
+    <h3>Overview — every morning</h3>
+    <p>The morning picture: kegs at venues, empties waiting, kegs that need a wash, kegs ready to fill, what is going out today. The <strong>Activity</strong> tab is the full event log — fills, cleans, deliveries — with the person who did each one. Use it when someone asks what happened yesterday.</p>
+    <img class="wide" src="assets/guide/dash-overview.jpg" alt="Overview screen" style="margin-top:10px" />
 
-  <section class="block module" id="orders" data-search="dairy orders ordermentum tuesday friday full cream lite delivery date quantities">
-    <p class="kicker">Dairy · delivery days</p>
-    <h2>Orders</h2>
-    <p>Orders come from Ordermentum. You do not retype them. They are grouped by delivery date, not by invoice due date.</p>
-    <p>Tuesday orders close Monday evening. Friday orders close Thursday evening. Compare the full-cream and lite totals with the cool room. If you are short, fill before the driver leaves.</p>
-  </section>
+    <h3>Orders — delivery days</h3>
+    <p>Orders come from Ordermentum and appear here automatically — no manual entry. Grouped by delivery date. Tuesday orders close Monday evening; Friday orders close Thursday evening. Compare product totals against the cool room before building a run.</p>
 
-  <section class="block module" id="runs" data-search="dairy drivers runs dispatch live tracking start run stops collect deliver fleet map">
-    <p class="kicker">Dairy · delivery days</p>
-    <h2>Drivers and the fleet map</h2>
-    <p>Build the run, put the stops in order, assign the driver, then start the run when the truck leaves. As the driver scans, the dairy app updates. You do not need to call them to know a stop is done.</p>
-    <p>Fleet map is the same run on a map. Driver position while they are on the road. Venue pins for kegs already out.</p>
-  </section>
+    <h3>Drivers &amp; Fleet Map — delivery days</h3>
+    <p>Build the run: add stops in route order, assign the driver, start it when the truck leaves. As the driver scans each stop, the dairy app updates in real time. The Fleet Map shows the same run on a map — live driver position and venue pins for kegs already out.</p>
+    <img class="wide" src="assets/guide/dash-fleet.jpg" alt="Fleet map" style="margin-top:10px" />
 
-  <section class="block module" id="customers" data-search="dairy customers venues vendor active kegs on site add venue">
-    <p class="kicker">Dairy</p>
-    <h2>Customers</h2>
-    <p>Every venue you supply. Open one to see kegs on site, empties waiting, and whether they are a normal venue or a vendor.</p>
-    <p>A vendor is a place that can receive kegs again without the usual pickup path. The driver app treats those kegs as a delivery, not a collection.</p>
-  </section>
+    <h3>Customers — ongoing</h3>
+    <p>Every venue you supply. Open one to see kegs on site, empties waiting, and whether it is a standard venue or a vendor. A <strong>Vendor</strong> receives kegs outside the standard collection path — the driver app treats those as a straight delivery rather than a collection event.</p>
 
-  <section class="block module" id="staff" data-search="dairy staff admin driver factory pin email role settings">
-    <p class="kicker">Dairy · admin</p>
-    <h2>Staff</h2>
-    <p>Settings, then Staff. Drivers and factory staff log in with a PIN. Admins log in with email and password.</p>
+    <h3>Scan / History / Replace / Quarantine — as needed</h3>
+    <p><strong>Quick Scan:</strong> Hold the round button on the home screen. Lookup only — does not fill, clean, or deliver.</p>
+    <p><strong>History:</strong> Every scan on the keg, in order.</p>
+    <p><strong>Replace:</strong> Damaged label, same keg. Print a new one, link it. History carries over.</p>
+    <p><strong>Quarantine:</strong> Removes from circulation immediately. Admin-only release. Returns to Needs Cleaning.</p>
+
+    <h3>Staff — admin setup</h3>
+    <table style="margin-top:8px">
+      <tr><th>Role</th><th>App</th><th>Can do</th></tr>
+      <tr><td>Factory</td><td>Dairy</td><td>Fill, clean, scan</td></tr>
+      <tr><td>Driver</td><td>Driver</td><td>Today's run, deliver/collect scans, chat</td></tr>
+      <tr><td>Admin</td><td>Dairy</td><td>Customers, orders, runs, stock, reports</td></tr>
+      <tr><td>Super Admin</td><td>Dairy</td><td>Everything above, plus staff and settings</td></tr>
+    </table>
+    <p style="margin-top:8px">Factory and Driver staff log in with a PIN. Admin and Super Admin use email and password.</p>
+
+    <h3>Weekly rhythm</h3>
     <table>
-      <thead><tr><th>Role</th><th>App</th><th>They can</th></tr></thead>
-      <tbody>
-        <tr><td>Driver</td><td>Driver</td><td>Today’s run, scan deliver or collect, chat</td></tr>
-        <tr><td>Factory</td><td>Dairy</td><td>Fill, clean, scan</td></tr>
-        <tr><td>Admin</td><td>Dairy</td><td>Customers, orders, runs, stock, reports</td></tr>
-        <tr><td>Super admin</td><td>Dairy</td><td>All of that, plus staff and settings</td></tr>
-      </tbody>
+      <tr><th>Day</th><th>What happens</th></tr>
+      <tr><td>Monday</td><td>Tuesday orders close in the evening. Check cool room against order totals. Fill if short.</td></tr>
+      <tr><td>Tuesday</td><td>Run the deliveries. Collect empties on the same run.</td></tr>
+      <tr><td>Wednesday</td><td>Wash what came home Tuesday. Start filling for Friday.</td></tr>
+      <tr><td>Thursday</td><td>Friday orders close in the evening. Finish filling. Build Friday's run.</td></tr>
+      <tr><td>Friday</td><td>Second run. Same as Tuesday.</td></tr>
+      <tr><td>Weekend</td><td>Wash Friday's empties. Review the week on Overview.</td></tr>
     </table>
   </section>
 
-  <section class="block module" id="trace" data-search="dairy scan trace keg history replace label quarantine fingerprint fill operator">
-    <p class="kicker">Dairy · as needed</p>
-    <h2>Scan, history, replace, quarantine</h2>
-    <p>Scan a QR to see the keg’s story: status, venue, use-by, who filled it, and where it has been. That is the fingerprint.</p>
-    <p><b>Replace</b> is for a damaged label. The new sticker keeps the same keg history. Do not treat it as a new keg.</p>
-    <p><b>Quarantine</b> takes a keg out of circulation: expired, damaged, contamination, or a fill that should not have happened. Only an admin releases it, and it comes back as needs-cleaning. Wash it before it is filled again.</p>
-  </section>
-
-  <section class="block module" id="week" data-search="dairy delivery windows tuesday friday monday thursday checklist week">
-    <p class="kicker">Dairy · the week</p>
-    <h2>Tuesday and Friday</h2>
-    <table>
-      <thead><tr><th>Day</th><th>What happens</th></tr></thead>
-      <tbody>
-        <tr><td>Monday</td><td>Tuesday orders close. Check quantities. Fill if the cool room is short.</td></tr>
-        <tr><td>Tuesday</td><td>Run the deliveries. Collect empties on the same run.</td></tr>
-        <tr><td>Wednesday</td><td>Clean what came home. Start filling for Friday.</td></tr>
-        <tr><td>Thursday</td><td>Friday orders close. Finish the fill. Build Friday’s run.</td></tr>
-        <tr><td>Friday</td><td>Second run. Same as Tuesday.</td></tr>
-        <tr><td>Weekend</td><td>Clean Friday’s empties. Look at the week on Overview.</td></tr>
-      </tbody>
-    </table>
-  </section>
-
-  <section class="block module" id="statuses" data-search="keg status glossary ready to fill filled at venue empty needs cleaning quarantined picked up">
-    <p class="kicker">All apps</p>
-    <h2>What a keg status means</h2>
-    <table>
-      <thead><tr><th>Status</th><th>It means</th><th>Next</th></tr></thead>
-      <tbody>
-        <tr><td>Ready to fill</td><td>Clean, in the queue</td><td>Fill</td></tr>
-        <tr><td>Filled</td><td>In the cool room</td><td>Put it on a run</td></tr>
-        <tr><td>Picked up</td><td>On the truck</td><td>Driver delivers it</td></tr>
-        <tr><td>At venue</td><td>On tap</td><td>Watch the use-by. Collect when empty.</td></tr>
-        <tr><td>Empty</td><td>Finished, still at the venue</td><td>Collect on the next run</td></tr>
-        <tr><td>Needs cleaning</td><td>Home, not washed</td><td>Wash, then scan Clean</td></tr>
-        <tr><td>Quarantined</td><td>Out of circulation</td><td>Admin releases it back to cleaning</td></tr>
-      </tbody>
-    </table>
-  </section>
-
-  <section class="block module" id="driver" data-search="driver app home deliveries scan chat runs settings pin today run">
+  <!-- ===================== THE UDDER DRIVER ===================== -->
+  <div class="section-divider">— The Udder Driver —</div>
+  <section class="block module" id="driver" data-search="driver deliveries scan runs chat settings road stops kegs collect drop map navigate">
     <p class="kicker">The Udder Driver</p>
-    <h2>The driver only sees today’s work.</h2>
-    <div class="shots">
-      <img class="phone" src="assets/guide/driver-home.jpg" alt="Driver home" />
+    <h2>The driver only sees today's work.</h2>
+    <p>The Driver app is for delivery drivers. It shows only what the driver needs for today — their run, their stops, and the scan button. Nothing else. Drivers do not see other runs, other drivers, or the dairy's internal operations. The dairy builds the run; the driver executes it.</p>
+
+    <div class="shots" style="margin:18px 0 10px">
       <div class="icons" style="flex:1">
-        <div><strong>Deliveries</strong><span>Stops still to do.</span></div>
+        <div><strong>Deliveries</strong><span>Stops still to do, with keg counts.</span></div>
         <div><strong>Scan</strong><span>The job. Scan to deliver or collect.</span></div>
-        <div><strong>Chat</strong><span>Message the dairy or the venue.</span></div>
-        <div><strong>Runs</strong><span>Today’s run, stop by stop.</span></div>
+        <div><strong>Chat</strong><span>Message the dairy or a venue.</span></div>
+        <div><strong>Runs</strong><span>Today's run, stop by stop.</span></div>
         <div><strong>Settings</strong><span>Their own login. Nothing else.</span></div>
       </div>
     </div>
-    <p style="margin-top:14px">Under the icons is today’s run: stops, kegs to drop, kegs to pick up. Open a stop, scan, move on. The dairy sees it the moment they scan.</p>
+
+    <h3>Deliveries</h3>
+    <p>Today's outstanding stops appear here. Each stop shows the venue name, kegs to drop, and empties to collect. Completed stops are marked off as the driver scans them.</p>
+
+    <h3>Scan — the core job</h3>
+    <p>Open a stop, tap Scan. The camera opens. Scan each keg you are leaving — status changes to <strong>At Venue</strong>. Scan each empty you are collecting — status changes to <strong>Needs Cleaning</strong>. The dairy sees it happen in real time. Finish the stop and the next venue opens on the map with directions and an ETA.</p>
+    <div class="note warn">Use the Driver app for deliveries. The Venue app's stock view is for the venue's own reference, not for recording a delivery at someone else's door.</div>
+
+    <h3>Runs</h3>
+    <p>Today's assigned run with all stops in order. Each stop shows how far away it is and an estimated travel time.</p>
+
+    <h3>Chat</h3>
+    <p>Message the dairy or a venue directly. All parties can see the thread.</p>
   </section>
 
-  <section class="block module" id="driver-scan" data-search="driver scan deliver collect navigation map minutes truck venue">
-    <p class="kicker">Driver · on the road</p>
-    <h2>Scan the keg. The map does the rest.</h2>
-    <div class="shots">
-      <div class="card"><img class="phone" src="assets/guide/driver-scan.jpg" alt="Driver scan" /><p class="muted">Scan — deliver or collect. Status changes by itself.</p></div>
-      <div class="card"><img class="phone" src="assets/guide/driver-nav.jpg" alt="Driver navigation" /><p class="muted">Next venue, how far, how long.</p></div>
-    </div>
-    <ol class="steps">
-      <li><div>Open the stop. Check how many kegs go out and how many come back.</div></li>
-      <li><div>Scan each keg you leave. Scan each empty you take.</div></li>
-      <li><div>Finish the stop. The next venue opens on the map.</div></li>
-    </ol>
-    <div class="note">Use the driver app for deliveries. The venue app’s quick check is for that venue’s own stock, not for dropping kegs at someone else’s door.</div>
-  </section>
-
-  <section class="block module" id="venue" data-search="venue app home deliveries orders chat stock history staff settings pin cafe">
+  <!-- ===================== THE UDDER VENUE ===================== -->
+  <div class="section-divider">— The Udder Venue —</div>
+  <section class="block module" id="venue" data-search="venue cafe restaurant bar retailer deliveries orders stock history chat staff settings on tap use-by">
     <p class="kicker">The Udder Venue</p>
-    <h2>The café does not need a training day.</h2>
-    <div class="shots">
-      <img class="phone" src="assets/guide/venue-home.jpg" alt="Venue home" />
+    <h2>The venue does not need a training day.</h2>
+    <p>The Venue app is for any venue that receives milk kegs — cafés, restaurants, bars, retailers, or any other on-tap location. It gives the venue visibility over their own stock, their incoming deliveries, and their order history. No training required. The app is built for venue staff, not operations managers.</p>
+    <p class="muted">A venue only sees their own place. They do not see other venues or the dairy's internal operations.</p>
+
+    <div class="shots" style="margin:18px 0 10px">
       <div class="icons" style="flex:1">
         <div><strong>Deliveries</strong><span>What is coming, and what arrived.</span></div>
         <div><strong>Orders</strong><span>Ask for more kegs. Pick the day.</span></div>
-        <div><strong>Chat</strong><span>Message the dairy or today’s driver.</span></div>
+        <div><strong>Chat</strong><span>Message the dairy or today's driver.</span></div>
         <div><strong>Stock</strong><span>Kegs on site, full and empty.</span></div>
         <div><strong>History</strong><span>Past drops and pickups.</span></div>
         <div><strong>Staff</strong><span>Who at the venue can log in.</span></div>
         <div><strong>Settings</strong><span>Their PIN and their details.</span></div>
       </div>
     </div>
+
+    <h3>Deliveries</h3>
+    <p>Shows upcoming deliveries with the driver's name, ETA in minutes, and how many kegs are on the truck. Completed deliveries show timestamps and keg IDs. The venue can see the driver approaching before the knock on the door.</p>
+
+    <h3>Orders</h3>
+    <p>Select product and quantity, pick the delivery day, submit. The order flows to Ordermentum and appears in the dairy's Orders screen automatically. No call or email needed. Deadlines: Tuesday delivery by Monday evening, Friday delivery by Thursday evening.</p>
+
+    <h3>Stock</h3>
+    <p>Kegs currently on site. Each full keg shows: product type, use-by date, days remaining, and how long it has been at the venue. If a keg is showing zero days or close to it, contact the dairy or flag it in Chat.</p>
+
+    <h3>History</h3>
+    <p>A record of every past delivery and collection. Use it to verify that an order was received or a keg was returned.</p>
+
+    <h3>Chat</h3>
+    <p>Message the dairy or today's driver. Use this for delivery questions, keg issues, or anything time-sensitive.</p>
+
+    <h3>Staff</h3>
+    <p>Add or remove venue staff, assign PINs. Venue staff log in with a PIN — no email login required.</p>
+
+    <div class="note" style="margin-top:16px">Tell a venue: order in the app, watch the driver arrive, see what is on tap, message us if something is wrong.</div>
   </section>
 
-  <section class="block module" id="venue-stock" data-search="venue stock use-by live tracking driver minutes on tap order">
-    <p class="kicker">Venue</p>
-    <h2>They can see the milk, and the driver.</h2>
-    <div class="shots">
-      <div class="card"><img class="phone" src="assets/guide/venue-stock.jpg" alt="Venue stock" /><p class="muted">Type, use-by, and how long it has been there.</p></div>
-      <div class="card"><img class="phone" src="assets/guide/venue-track.jpg" alt="Live delivery" /><p class="muted">Minutes away, who is driving, how many kegs.</p></div>
-    </div>
-    <p>A venue only sees their own place. They do not see other venues, and they do not see the dairy’s whole stock.</p>
-    <div class="note">Tell a venue: order in the app, watch the driver, see what is on tap, message us if something is wrong.</div>
-  </section>
-
-  <section class="block module" id="dashboard" data-search="dashboard computer owner overview kegs operations sustainability settings theudderdairy.com week month">
+  <!-- ===================== DASHBOARD ===================== -->
+  <div class="section-divider">— Dashboard —</div>
+  <section class="block module" id="dashboard" data-search="dashboard overview kegs operations customer sustainability settings owner manager web browser week month period">
     <p class="kicker">Dashboard</p>
     <h2>The same story, on a computer.</h2>
-    <p>Owners use <a href="https://theudderdairy.com">theudderdairy.com</a> for the week, not for scanning a keg. Phone scans still do the work. The dashboard is the big screen.</p>
-    <div class="grid2">
-      <div class="card"><img class="wide" src="assets/guide/dash-overview.jpg" alt="Dashboard overview" /><p class="muted">Today — filled, out, back, bottles replaced.</p></div>
-      <div class="card"><img class="wide" src="assets/guide/dash-period.jpg" alt="Dashboard period" /><p class="muted">The week or the month, not just this morning.</p></div>
-      <div class="card"><img class="wide" src="assets/guide/dash-fleet.jpg" alt="Dashboard kegs" /><p class="muted">Every keg, with its status.</p></div>
-      <div class="card"><img class="wide" src="assets/guide/dash-ops.jpg" alt="Dashboard operations" /><p class="muted">Runs, fills, cleaning, products — one place.</p></div>
-    </div>
-    <div class="icons" style="margin-top:12px">
+    <p>The Dashboard at <a href="https://theudderdairy.com">theudderdairy.com</a> is for owners and managers who want the bigger picture — the week, the month, the whole fleet — on a large screen. Phone scans do the work. The dashboard shows the results.</p>
+    <p class="muted">Use it at your desk to review the week, check on a specific keg, audit operations, or pull a sustainability number for a venue conversation.</p>
+
+    <div class="icons" style="margin:16px 0">
       <div><strong>Overview</strong><span>Today and the period. The owner view.</span></div>
       <div><strong>Kegs</strong><span>Find a keg. Read its fingerprint.</span></div>
-      <div><strong>Operations</strong><span>Fills, cleans, deliveries, runs.</span></div>
+      <div><strong>Operations</strong><span>Fills, cleans, deliveries, runs — one log.</span></div>
       <div><strong>Customer</strong><span>Venues and what they are holding.</span></div>
-      <div><strong>Sustainability</strong><span>Bottles replaced. The number you can show a venue.</span></div>
-      <div><strong>Settings</strong><span>Products, staff, labels. Same jobs as the dairy app, on a big screen.</span></div>
+      <div><strong>Sustainability</strong><span>Bottles replaced. The number you show venues.</span></div>
+      <div><strong>Settings</strong><span>Products, staff, labels — same as the dairy app.</span></div>
     </div>
+
+    <h3>Overview</h3>
+    <p>What happened today and over a selected period: kegs filled, out, back; bottles replaced; delivery activity; staff events. Switch between today, this week, and this month using the period selector at the top.</p>
+    <div class="row" style="gap:12px;margin-top:10px">
+      <img class="wide" src="assets/guide/dash-overview.jpg" alt="Dashboard overview" />
+      <img class="wide" src="assets/guide/dash-period.jpg" alt="Period selector" />
+    </div>
+
+    <h3>Kegs</h3>
+    <p>Find any keg by ID or status. Open it to read its full fingerprint: current status, venue location, use-by date, fill history, and every scan in order. Use this when a venue asks about a specific keg or when investigating a quality or logistics issue.</p>
+
+    <h3>Operations</h3>
+    <p>The full log of fills, cleans, deliveries, and runs. Filterable by date, event type, or staff member. Use it to audit what happened on a specific day or verify a run was completed.</p>
+    <img class="wide" src="assets/guide/dash-ops.jpg" alt="Operations log" style="margin-top:10px" />
+
+    <h3>Customer</h3>
+    <p>Venues and what they are holding. Click a venue to see current kegs on site, empties waiting for collection, order history, and contact details.</p>
+
+    <h3>Sustainability</h3>
+    <p>Bottles replaced — each keg delivered replaces a set number of single-use bottles. This screen shows the cumulative count by period, by venue, or across the whole operation. This is the number you show a venue when they ask about their environmental impact.</p>
+
+    <h3>Settings</h3>
+    <p>Products, staff, label templates, and dairy details — the same configuration available in the Dairy app, on a larger screen. Changes here apply across the whole platform.</p>
   </section>
 
-  <section class="block module" id="setup" data-search="setup onboarding first run logins pins dairy driver venue">
+  <!-- ===================== GETTING STARTED ===================== -->
+  <div class="section-divider">— Getting Started —</div>
+  <section class="block module" id="getstarted" data-search="onboarding setup getting started first run dairy people login PIN staff kegs">
     <p class="kicker">After you say yes</p>
     <h2>We set it up. You pour milk.</h2>
-    <div class="row">
-      <div class="card"><h3>1. Your dairy</h3><p>Name, products, delivery days, staff. We load the kegs you already have.</p></div>
-      <div class="card"><h3>2. Your people</h3><p>Dairy logins, driver PINs, venue PINs. Each person gets the right app.</p></div>
-      <div class="card"><h3>3. First run</h3><p>Fill, deliver, collect, clean. You watch it on the phone and on the dashboard.</p></div>
+    <ol class="steps">
+      <li><div><b>Your dairy</b><br>Name, products, delivery days, staff. We load the kegs you already have into the system.</div></li>
+      <li><div><b>Your people</b><br>Dairy logins, driver PINs, venue PINs. Each person gets the right app. Factory staff get the Dairy app. Drivers get the Driver app. Venues get the Venue app.</div></li>
+      <li><div><b>First run</b><br>Fill, deliver, collect, clean. Watch it on the phone and on the dashboard. The cycle runs itself from here.</div></li>
+    </ol>
+    <div style="margin-top:18px">
+      <a class="pill" href="assets/TUW-onboarding.pdf">Onboarding PDF</a>
+      <a class="pill" href="mailto:tech@theudderway.com" style="margin-left:8px">tech@theudderway.com</a>
     </div>
-    <p style="margin-top:14px">Onboarding PDF: <a href="assets/TUW-onboarding.pdf">TUW-onboarding.pdf</a><br>Questions: <a href="mailto:tech@theudderway.com">tech@theudderway.com</a></p>
   </section>
 
-  <footer>The Udder Way · manual.theudderdairy.com</footer>
 </main>
+
+<footer>
+  <p>The Udder Way · <a href="https://theudderdairy.com">theudderdairy.com</a> · <a href="mailto:tech@theudderway.com">tech@theudderway.com</a></p>
+</footer>
+
 <script>
+(function(){
   const q = document.getElementById('q');
-  const modules = [...document.querySelectorAll('.module')];
   const hits = document.getElementById('hits');
   const empty = document.getElementById('empty');
-  function run() {
-    const term = q.value.trim().toLowerCase();
-    let n = 0;
-    modules.forEach(el => {
-      const hay = (el.dataset.search + ' ' + el.innerText).toLowerCase();
-      const show = !term || hay.includes(term);
-      el.classList.toggle('hidden', !show);
-      if (show) n++;
+  const modules = Array.from(document.querySelectorAll('.module'));
+
+  function search(val){
+    const v = val.trim().toLowerCase();
+    if(!v){ modules.forEach(m=>m.classList.remove('hidden')); hits.textContent=''; empty.style.display='none'; return; }
+    let n=0;
+    modules.forEach(m=>{
+      const hay = (m.dataset.search||'') + ' ' + m.textContent;
+      const show = hay.toLowerCase().includes(v);
+      m.classList.toggle('hidden',!show);
+      if(show) n++;
     });
-    empty.style.display = term && n === 0 ? 'block' : 'none';
-    hits.textContent = term ? (n + (n === 1 ? ' module' : ' modules')) : '';
+    hits.textContent = n ? n + ' section' + (n>1?'s':'') + ' match' : '';
+    empty.style.display = n ? 'none' : 'block';
   }
-  q.addEventListener('input', run);
+  q.addEventListener('input', e=>search(e.target.value));
+})();
 </script>
 </body>
 </html>
